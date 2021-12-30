@@ -1,0 +1,10 @@
+.nav-link {
+  margin-right: 30px !important;
+}
+
+#login {
+  background-color: #008000a6;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 15px 0px 15px;
+}
