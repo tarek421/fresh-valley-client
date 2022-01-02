@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div className="mt-1">
-      <Navbar expand="lg">
+    <div>
+      <Navbar expand="lg" className='my-0'>
         <Container>
-          <Navbar.Brand as={Link} to="/">Fresh Valley</Navbar.Brand>
+          <Navbar.Brand className="brand" as={Link} to="/">Fresh Valley</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse className="justify-content-end" id="navbarScroll">
             <Nav
@@ -18,8 +18,8 @@ const Header = () => {
             >
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/order">Order</Nav.Link>
-              <Nav.Link as={Link} to="login">Admin</Nav.Link>
-              <Nav.Link id="login" as={Link} to="admin">Login</Nav.Link>
+              <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
+              <Nav.Link id="login" as={Link} to="/login">Login</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
