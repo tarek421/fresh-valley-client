@@ -8,6 +8,7 @@
 
 .side-bar {
   width: 20%;
+  text-align: left;
   height: 100vh;
   background-color: #030307e6;
   color: #ffffffbd;

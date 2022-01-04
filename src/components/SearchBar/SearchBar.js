@@ -1,16 +1,23 @@
 import React from "react";
 
 const SearchBar = () => {
+  const buttonStyle = {
+    margin: "0",
+    padding: "0 28px",
+    background: "#56a956",
+  };
+  const searchStyle = {
+    maxWidth: "100%",
+    width: "350px",
+    margin: "auto",
+  };
   return (
-    <div class="input-group">
+    <div style={searchStyle} className="input-group search-bar">
       <div class="form-outline">
-        <input type="search" id="form1" class="form-control" />
-        <label class="form-label" for="form1">
-          Search
-        </label>
+        <input type="search" id="form1" className="form-control" />
       </div>
-      <button type="button" class="btn btn-primary">
-        <i class="fas fa-search"></i>
+      <button style={buttonStyle} type="button" className="btn btn-primary">
+        Search
       </button>
     </div>
   );

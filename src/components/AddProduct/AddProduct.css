@@ -1,59 +1,65 @@
-.add-product-form{
-   padding: 50px;
-    margin: 50px 100px 50px 50px;
-    background: white;
-    border: 1px dashed #ddd;
+.add-product-form {
+  padding: 50px;
+  margin: 50px 100px 50px 50px;
+  background: white;
+  border: 1px dashed #ddd;
 }
 
-.add-product-form input{
-   background-color: #fff;
-   border: 1px solid #605151b8;
+.add-product-form input {
+  background-color: #fff;
+  border: 1px solid #605151b8;
 }
 
 .add-product-form input[type="submit"] {
-   width: 12%;
-   float: right;
-   overflow: hidden;
-   background: #008000d1;
-   color: white;
-   border-radius: 10px;
+  width: 15%;
+  float: right;
+  overflow: hidden;
+  background: #008000d1;
+  color: white;
+  border-radius: 10px;
 }
 
-.product-title{
-   margin-bottom: 0;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -1px;
+.product-title {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
-
-span{
-   color: red;
+span {
+  color: yellow;
 }
 
-.image-upload > input
-{
-    display: none;
+.image-upload > input {
+  display: none;
 }
 
-.image-upload{
-   margin-top: 53px;
-    border: 1px solid #2e972e;
-    width: 42%;
-    padding: 8px;
-    cursor: pointer;
+.image-upload {
+  margin-top: 53px;
+  border: 1px solid #2e972e;
+  width: 42%;
+  padding: 11px 0;
+  cursor: pointer;
 }
 
-.image-upload .upload-icon
-{
-    width: 30px;
-    cursor: pointer;
-    color: #2e972e;
+.image-upload .upload-icon {
+  width: 30px;
+  cursor: pointer;
+  color: #2e972e;
 }
 
 .upload-photo {
-   color: #2e972e;
-   font-size: 16px;
-   font-weight: 600;
-   cursor: pointer;
+  color: #2e972e;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main input {
+  border-radius: 5px;
+  max-width: 100%;
+  width: 80%;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
 }
