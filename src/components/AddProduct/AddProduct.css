@@ -38,20 +38,21 @@ span{
 
 .image-upload{
    margin-top: 53px;
-    border: 1px solid blue;
-    width: 41%;
+    border: 1px solid #2e972e;
+    width: 42%;
     padding: 8px;
     cursor: pointer;
 }
 
-.image-upload img
+.image-upload .upload-icon
 {
     width: 30px;
     cursor: pointer;
+    color: #2e972e;
 }
 
 .upload-photo {
-   color: #0000ffd1;
+   color: #2e972e;
    font-size: 16px;
    font-weight: 600;
    cursor: pointer;

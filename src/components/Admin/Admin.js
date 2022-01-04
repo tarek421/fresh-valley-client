@@ -11,8 +11,11 @@ import "./Admin.css";
 
 const Admin = () => {
 
-  const [active, setActive] = useState({manage: true});
-  console.log(active);
+  const [active, setActive] = useState({manage: true, manageActive: 'manageActive'});
+  const manageActive = (active.manageActive);
+  const addActive = (active.addActive);
+  const editActive = (active.editActive);
+  // console.log(active.event.target.parrentNode);
 
   return (
     <div className="admin-container">
@@ -22,9 +25,9 @@ const Admin = () => {
           <hr />
         </div>
         <div className="menu">
-           <h5 onClick={()=>setActive({manage: true})}><span><FontAwesomeIcon icon={faBars} /></span> Manage Product</h5>
-           <h5 onClick={()=>setActive({add: true})}><span><FontAwesomeIcon icon={faPlus} /></span> Add Product</h5>
-           <h5 onClick={()=>setActive({edit: true})}><span><FontAwesomeIcon icon={faEdit} /></span> Edit Product</h5>
+           <h5 className={manageActive} onClick={()=>setActive({manage: true, manageActive: 'manageActive'})}><span><FontAwesomeIcon icon={faBars} /></span> Manage Product</h5>
+           <h5 className={addActive} onClick={()=>setActive({add: true, addActive: 'addActive'})}><span><FontAwesomeIcon icon={faPlus} /></span> Add Product</h5>
+           <h5 className={editActive} onClick={()=>setActive({edit: true, editActive: 'editActive'})}><span><FontAwesomeIcon icon={faEdit} /></span> Edit Product</h5>
         </div>
       </div>
       <div className="main">
@@ -33,7 +36,7 @@ const Admin = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse className="justify-content-end" id="navbarScroll">
             <Nav
-              className="my-2 my-lg-0"
+              className="my-2 my-lg-0 admin-navbar-navlink"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >

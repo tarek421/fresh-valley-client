@@ -3,6 +3,7 @@
 .admin-container {
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .side-bar {
@@ -10,14 +11,17 @@
   height: 100vh;
   background-color: #030307e6;
   color: #ffffffbd;
-  position: fixed;
+  position: sticky;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .main {
+  max-width: 100%;
   width: 80%;
-  background-color: #dddcdc57;
+  height: 100vh;
   color: black;
-  margin-left: 270px;
+  overflow-y: auto;
 }
 
 .brand {
@@ -32,6 +36,15 @@
   color: #edecee;
 }
 
+.admin-navbar-navlink .nav-link{
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.admin-navbar-navlink #login{
+  background-color: #2e342ed9;
+}
+
 .name {
   text-align: center;
   padding: 20px 0;
@@ -40,25 +53,27 @@
 .admin-navbar {
   border-bottom: 1px solid #917979c7;
   padding-bottom: 0px;
+  background: #2e972e;
 }
 
-.menu {
-  margin-left: 15px;
-}
 
 .main-content {
   background: #f6f5f7;
-  height: 100%;
 }
 
 h5 {
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
-  padding: 5px 0;
+  padding: 5px 15px;
 }
 
 .menu h5 span {
   font-size: 15px;
   margin-right: 10px;
+}
+
+.manageActive, .addActive, .editActive {
+  background-color: #2e972e;
+  color: white;
 }

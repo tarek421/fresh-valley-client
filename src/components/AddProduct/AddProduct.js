@@ -3,15 +3,59 @@ import axios from "axios";
 import "./AddProduct.css";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 
-const AddProduct = () => {
+const AddProduct = () => {  
+
+  const [imageUrl, setImageUrl] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [imageUrl, setImageUrl] = useState("");
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    const loading = toast.loading("Please wait...", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+
+    const product = {
+      name: data.name,
+      price: data.price,
+      wight: data.wight,
+      image: imageUrl,
+    };
+    console.log(product);
+
+    axios
+      .post("http://localhost:5000/addProduct", product)
+      .then(function (response) {
+        console.log(response);
+        toast.dismiss(loading);
+        toast.success("Successfully add product", {
+          style: {
+            borderRadius: "10px",
+            background: "green",
+            color: "#fff",
+          },
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+        toast.error(error, {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "red",
+          },
+        });
+      });
+  };
 
   const handleImage = (event) => {
     const loading = toast.loading("Please wait...", {
@@ -51,6 +95,7 @@ const AddProduct = () => {
         <div className="col-6">
           <h4 className="product-title">Product Name</h4>
           <input
+            className="input-clear"
             placeholder="Product Name"
             {...register("name", { required: true })}
           />
@@ -58,6 +103,7 @@ const AddProduct = () => {
 
           <h4 className="product-title mt-4">Wight</h4>
           <input
+            className="input-clear"
             placeholder="Product Wight"
             {...register("wight", { required: true })}
           />
@@ -67,6 +113,7 @@ const AddProduct = () => {
         <div className="col-6">
           <h4 className="product-title">Product Price</h4>
           <input
+            className="input-clear"
             placeholder="Product Price"
             {...register("price", { required: true })}
           />
@@ -74,13 +121,18 @@ const AddProduct = () => {
 
           <div className="image-upload">
             <label htmlFor="file-input">
-              <img
-                src={require("../../icons/cloud-upload-outline 1.png")}
-                alt="Upload"
+              <FontAwesomeIcon
+                className="upload-icon"
+                icon={faCloudUploadAlt}
               />
               <span className="upload-photo">Upload Photo</span>
             </label>
-            <input onChange={handleImage} id="file-input" type="file" />
+            <input
+              className="input-clear"
+              onChange={handleImage}
+              id="file-input"
+              type="file"
+            />
           </div>
         </div>
       </div>
