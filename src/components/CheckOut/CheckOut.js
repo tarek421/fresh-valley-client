@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const CheckOut = () => {
   const [product, setProduct] = useState({});
-  const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  const [loggedInUser] = useContext(userContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ const CheckOut = () => {
           <hr />
           <div className="row">
             <div className="col-md-6 text-start">
-              <h5>{product.name}</h5>
+              <h5>{product.product_name}</h5>
             </div>
             <div className="col-md-5">
               <h5>1</h5>

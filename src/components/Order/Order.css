@@ -5,3 +5,7 @@
     margin-top: 8px;
     text-align: left;
 }
+
+.accordion-body .card:hover {
+    background: aliceblue;
+}

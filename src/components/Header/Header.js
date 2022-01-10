@@ -16,7 +16,7 @@ import "./Header.css";
 
 const Header = () => {
 
-  const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  const [loggedInUser] = useContext(userContext);
   const [anchorElUser, setAnchorElUser] = useState(null);
   console.log(loggedInUser);
   const handleOpenUserMenu = (event) => {

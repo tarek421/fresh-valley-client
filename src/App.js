@@ -15,9 +15,6 @@ import { getDecodedUser } from './components/Login/LoginManager';
 export const userContext = createContext()
 
 function App() {
-  const loginInformetion = {
-    
-  }
   const [loggedInUser, setLoggedInUser] = useState(getDecodedUser());
   return (
     <userContext.Provider className='App' value={[loggedInUser, setLoggedInUser]}>

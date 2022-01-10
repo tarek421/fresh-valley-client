@@ -5,7 +5,7 @@ import "./Order.css";
 import OrderDetail from "./OrderDetail";
 
 const Order = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  const [loggedInUser] = useContext(userContext);
   const [myorder, setMyOrder] = useState([]);
   useEffect(() => {
     fetch(
@@ -22,7 +22,7 @@ const Order = () => {
       <Header />
       {loggedInUser?.signInUser && (
         <div className="container accordion-body">
-          <div style={{ padding: "10px 10px" }} className="card">
+          <div style={{ padding: "10px 10px", background:'aqua' }} className="card">
             <div className="row">
               <div className="col-4">
                 <h2>Order Id</h2>
