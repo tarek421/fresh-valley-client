@@ -20,7 +20,7 @@ const Order = () => {
   return (
     <div className="text-start">
       <Header />
-      {loggedInUser?.signInUser && (
+      {loggedInUser?.IsSignedIn && (
         <div className="container accordion-body">
           <div style={{ padding: "10px 10px", background:'aqua' }} className="card">
             <div className="row">

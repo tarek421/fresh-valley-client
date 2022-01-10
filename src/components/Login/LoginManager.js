@@ -78,7 +78,7 @@ export const getDecodedUser = () => {
   }
   const { name, picture, email } = jwt_decode(token);
   const decodedUser = {
-    signInUser: true,
+    IsSignedIn: true,
     name: name,
     email: email,
     photo: picture || "https://i.ibb.co/5GzXkwq/user.png",
@@ -105,7 +105,7 @@ export const handleSignOut = () => {
       localStorage.removeItem("token");
       window.location.reload();
       const signedOutUser = {
-        signInUser: false,
+        IsSignedIn: false,
         userName: "",
         email: "",
         userPhoto: "",

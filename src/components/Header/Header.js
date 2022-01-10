@@ -53,9 +53,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/order">Order</Nav.Link>
               <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
               {
-                !loggedInUser?.signInUser && <Nav.Link id="login" as={Link} to="/login">Login</Nav.Link>
+                !loggedInUser?.IsSignedIn && <Nav.Link id="login" as={Link} to="/login">Login</Nav.Link>
               }
-              {loggedInUser?.signInUser && (
+              {loggedInUser?.IsSignedIn && (
               <Box id='profile' className='mt-3' sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
