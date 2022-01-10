@@ -12,10 +12,15 @@ import "./Admin.css";
 const Admin = () => {
 
   const [active, setActive] = useState({manage: true, manageActive: 'manageActive'});
-  const manageActive = (active.manageActive);
-  const addActive = (active.addActive);
-  const editActive = (active.editActive);
+  // const manageActive = (active.manageActive);
+  // const addActive = (active.addActive);
+  // const editActive = (active.editActive);
   // console.log(active.event.target.parrentNode);
+  const parentNode= (event) => {
+    const targetTag = (event.target);
+    console.log(targetTag);
+    targetTag.classList.add('active');
+  }
 
   return (
     <div className="admin-container">
@@ -24,10 +29,23 @@ const Admin = () => {
         <Navbar.Brand className="brand" as={Link} to="/">Fresh Valley</Navbar.Brand>
           <hr />
         </div>
-        <div className="menu">
-           <h5 className={manageActive} onClick={()=>setActive({manage: true, manageActive: 'manageActive'})}><span><FontAwesomeIcon icon={faBars} /></span> Manage Product</h5>
-           <h5 className={addActive} onClick={()=>setActive({add: true, addActive: 'addActive'})}><span><FontAwesomeIcon icon={faPlus} /></span> Add Product</h5>
-           <h5 className={editActive} onClick={()=>setActive({edit: true, editActive: 'editActive'})}><span><FontAwesomeIcon icon={faEdit} /></span> Edit Product</h5>
+        <div onClick={(event)=>parentNode(event)} className="menu">
+
+           <h5 onClick={(event)=>setActive({manage: true, manageActive: 'manageActive'})}>
+             <span><FontAwesomeIcon icon={faBars} /></span>
+              Manage Product
+           </h5>
+
+           <h5 onClick={(event)=>setActive({add: true, addActive: 'addActive'})}>
+             <span><FontAwesomeIcon icon={faPlus} /></span>
+              Add Product
+           </h5>
+
+           <h5 onClick={()=>setActive({edit: true, editActive: 'editActive'})}><span><FontAwesomeIcon icon={faEdit} />
+           </span>
+            Edit Product
+           </h5>
+
         </div>
       </div>
       <div className="main">
@@ -60,7 +78,6 @@ const Admin = () => {
         {
           active.edit && <EditProduct/>
         }
-
 
       </div>
       </div>

@@ -7,20 +7,27 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivetRoute/PrivetRoute';
 import Admin from './components/Admin/Admin';
+import CheckOut from './components/CheckOut/CheckOut';
+import Order from './components/Order/Order';
+import { getDecodedUser } from './components/Login/LoginManager';
 
 
 export const userContext = createContext()
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
-  const [show, setShow] = useState(false);
+  const loginInformetion = {
+    
+  }
+  const [loggedInUser, setLoggedInUser] = useState(getDecodedUser());
   return (
-    <userContext.Provider className='App' value={[show, setShow, loggedInUser, setLoggedInUser]}>
+    <userContext.Provider className='App' value={[loggedInUser, setLoggedInUser]}>
      <Toaster />
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/order" element={<Order />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/product/:id" element={<CheckOut />} />
         <Route path="/" element={<PrivateRoute>
           <Admin />
         </PrivateRoute>} />

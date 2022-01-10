@@ -60,6 +60,7 @@
 
 .main-content {
   background: #f6f5f7;
+  text-align: left;
 }
 
 h5 {
@@ -75,6 +76,11 @@ h5 {
 }
 
 .manageActive, .addActive, .editActive {
+  background-color: #2e972e;
+  color: white;
+}
+
+.active{
   background-color: #2e972e;
   color: white;
 }

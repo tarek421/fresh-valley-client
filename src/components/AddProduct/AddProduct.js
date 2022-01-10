@@ -25,7 +25,7 @@ const AddProduct = () => {
     });
 
     const product = {
-      name: data.name,
+      product_name: data.productName,
       price: data.price,
       wight: data.wight,
       image: imageUrl,
@@ -97,7 +97,7 @@ const AddProduct = () => {
           <input
             className="input-clear"
             placeholder="Product Name"
-            {...register("name", { required: true })}
+            {...register("productName", { required: true })}
           />
           {errors.exampleRequired && <span>This field is required</span>}
 

@@ -6,49 +6,16 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://lit-plains-73999.herokuapp.com/products`)
     .then(res=>res.json())
     .then(data => setProducts(data))
   },[])
-
-  const data = [
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    },
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    },
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    },
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    },
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    },
-    {
-      name: "Minicate Rice- 50kg",
-      price: "$334",
-      image: "minicate",
-    }
-  ];
 
   return (
     <div className="container">
       <div className="row">
         {products.map((product) => (
-          <Product product={product}></Product>
+          <Product key={product._id} product={product}></Product>
         ))}
       </div>
     </div>

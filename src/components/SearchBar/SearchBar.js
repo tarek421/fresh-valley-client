@@ -13,7 +13,7 @@ const SearchBar = () => {
   };
   return (
     <div style={searchStyle} className="input-group search-bar">
-      <div class="form-outline">
+      <div className="form-outline">
         <input type="search" id="form1" className="form-control" />
       </div>
       <button style={buttonStyle} type="button" className="btn btn-primary">

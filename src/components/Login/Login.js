@@ -16,6 +16,7 @@ import {
   initializeLoginFramework,
   SignInWithPassword,
   createWithEmailAndPassword,
+  firebaseIdToken,
 } from "./LoginManager";
 import { userContext } from "../../App";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +26,7 @@ const Login = () => {
   const { register: registerSignIn, handleSubmit: handleSignIn } = useForm();
   const { register: registerSignUp, handleSubmit: handleSignUp } = useForm();
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
-
+  console.log(loggedInUser);
   const [newUser, setNewUser] = useState(false);
 
   const navigate = useNavigate();
@@ -105,9 +106,14 @@ const Login = () => {
   };
 
   const HandleResponse = (res) => {
+    firebaseIdToken();
     setLoggedInUser(res);
     toast.success("Successfully Logged In!");
     navigate("/");
+
+    setInterval(function () {
+      window.location.reload();
+    }, 2000);
   };
 
   return (
@@ -148,11 +154,11 @@ const Login = () => {
                 {...registerSignUp("password", { required: true })}
                 type="password"
               />
-              <button id="button">Sign Up</button>
+              <button>Sign Up</button>
             </form>
           </div>
           <div className="form-container sign-in-container">
-            <form className='form' onSubmit={handleSignIn(onSubmit)}>
+            <form className="form" onSubmit={handleSignIn(onSubmit)}>
               <h1>Sign in</h1>
               <div className="social-container">
                 <li>
@@ -191,9 +197,7 @@ const Login = () => {
               <small style={{ color: "blue", cursor: "pointer" }}>
                 Forgot your password?
               </small>
-              <button id="button" className="ghost">
-                Log In
-              </button>
+              <button className="ghost">Log In</button>
             </form>
           </div>
           <div className="overlay-container">
