@@ -10,7 +10,13 @@ const Order = () => {
   useEffect(() => {
     fetch(
       `https://lit-plains-73999.herokuapp.com/myorder?email=` +
-        loggedInUser.email
+        loggedInUser.email,
+        {
+          headers: { 
+            'content-type': 'application/json',
+             authorization: `${localStorage.getItem('token')}`
+          }
+        }
     )
       .then((res) => res.json())
       .then((data) => setMyOrder(data))

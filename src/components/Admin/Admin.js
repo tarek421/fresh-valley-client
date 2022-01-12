@@ -19,6 +19,7 @@ const Admin = () => {
   const parentNode= (event) => {
     const targetTag = (event.target);
     console.log(targetTag);
+    targetTag.classList.remove('active');
     targetTag.classList.add('active');
   }
 
@@ -31,7 +32,7 @@ const Admin = () => {
         </div>
         <div onClick={(event)=>parentNode(event)} className="menu">
 
-           <h5 onClick={(event)=>setActive({manage: true, manageActive: 'manageActive'})}>
+           <h5 className='active' onClick={(event)=>setActive({manage: true, manageActive: 'manageActive'})}>
              <span><FontAwesomeIcon icon={faBars} /></span>
               Manage Product
            </h5>
