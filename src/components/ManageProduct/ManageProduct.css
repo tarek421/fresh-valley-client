@@ -1,0 +1,11 @@
+.accordion-body h2{
+   font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-top: 8px;
+    text-align: left;
+}
+
+.accordion-body .card:hover {
+    background: aliceblue;
+}
